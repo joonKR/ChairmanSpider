@@ -16,5 +16,10 @@ namespace GloomySpider
         {
             InitializeComponent();
         }
+
+        private void NotConclude_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
