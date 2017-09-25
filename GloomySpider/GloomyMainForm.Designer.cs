@@ -122,15 +122,17 @@
             this.총대주금액 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.조회건수 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.oPW00018계좌평가결과BindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.종목번호 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.oPW00018계좌평가잔고개별합산BindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.oPW00018계좌평가잔고개별합산BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.종목번호DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.종목명DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.평가손익 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.수익률 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.현재가DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.평가손익DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.수익률DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.매입가DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.전일종가DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.보유수량DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.매매가능수량DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.현재가AccountStock = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.매입금액DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.매입수수료DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.평가금액DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -140,12 +142,11 @@
             this.보유비중DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.신용구분DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.신용구분명DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.대출일 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.대출일DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.전일매수수량DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.전일매도수량DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.금일매수수량DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.금일매도수량DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.oPW00018계좌평가잔고개별합산BindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAccountStock)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAccount)).BeginInit();
             this.tabCtr주문유형.SuspendLayout();
@@ -158,9 +159,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewStockInfo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.axKHOpenAPI)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.oPT10001주식기본정보BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.conditionSearchBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.oPW00018계좌평가결과BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.oPW00018계좌평가잔고개별합산BindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.oPW00018계좌평가잔고개별합산BindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -279,15 +282,15 @@
             this.dataGridViewAccountStock.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridViewAccountStock.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewAccountStock.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.종목번호,
+            this.종목번호DataGridViewTextBoxColumn,
             this.종목명DataGridViewTextBoxColumn,
-            this.평가손익,
-            this.수익률,
+            this.현재가DataGridViewTextBoxColumn,
+            this.평가손익DataGridViewTextBoxColumn,
+            this.수익률DataGridViewTextBoxColumn,
             this.매입가DataGridViewTextBoxColumn,
             this.전일종가DataGridViewTextBoxColumn,
             this.보유수량DataGridViewTextBoxColumn,
             this.매매가능수량DataGridViewTextBoxColumn,
-            this.현재가AccountStock,
             this.매입금액DataGridViewTextBoxColumn,
             this.매입수수료DataGridViewTextBoxColumn,
             this.평가금액DataGridViewTextBoxColumn,
@@ -297,7 +300,7 @@
             this.보유비중DataGridViewTextBoxColumn,
             this.신용구분DataGridViewTextBoxColumn,
             this.신용구분명DataGridViewTextBoxColumn,
-            this.대출일,
+            this.대출일DataGridViewTextBoxColumn,
             this.전일매수수량DataGridViewTextBoxColumn,
             this.전일매도수량DataGridViewTextBoxColumn,
             this.금일매수수량DataGridViewTextBoxColumn,
@@ -1236,6 +1239,26 @@
             this.axKHOpenAPI.TabIndex = 0;
             this.axKHOpenAPI.Visible = false;
             // 
+            // cbAccount
+            // 
+            this.cbAccount.FormattingEnabled = true;
+            this.cbAccount.ItemHeight = 24;
+            this.cbAccount.Location = new System.Drawing.Point(94, 136);
+            this.cbAccount.Name = "cbAccount";
+            this.cbAccount.Size = new System.Drawing.Size(130, 30);
+            this.cbAccount.TabIndex = 52;
+            this.cbAccount.UseSelectable = true;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::GloomySpider.Properties.Resources.gloomyspider;
+            this.pictureBox1.Location = new System.Drawing.Point(199, 15);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(57, 50);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 53;
+            this.pictureBox1.TabStop = false;
+            // 
             // 종목코드
             // 
             this.종목코드.DataPropertyName = "종목코드";
@@ -1360,12 +1383,20 @@
             // 
             this.oPW00018계좌평가결과BindingSource.DataSource = typeof(GloomySpider.OPW00018_계좌평가결과);
             // 
-            // 종목번호
+            // oPW00018계좌평가잔고개별합산BindingSource1
             // 
-            this.종목번호.DataPropertyName = "종목번호";
-            this.종목번호.HeaderText = "종목번호";
-            this.종목번호.Name = "종목번호";
-            this.종목번호.ReadOnly = true;
+            this.oPW00018계좌평가잔고개별합산BindingSource1.DataSource = typeof(GloomySpider.OPW00018_계좌평가잔고개별합산);
+            // 
+            // oPW00018계좌평가잔고개별합산BindingSource
+            // 
+            this.oPW00018계좌평가잔고개별합산BindingSource.DataSource = typeof(GloomySpider.OPW00018_계좌평가잔고개별합산);
+            // 
+            // 종목번호DataGridViewTextBoxColumn
+            // 
+            this.종목번호DataGridViewTextBoxColumn.DataPropertyName = "종목번호";
+            this.종목번호DataGridViewTextBoxColumn.HeaderText = "종목번호";
+            this.종목번호DataGridViewTextBoxColumn.Name = "종목번호DataGridViewTextBoxColumn";
+            this.종목번호DataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // 종목명DataGridViewTextBoxColumn
             // 
@@ -1374,19 +1405,26 @@
             this.종목명DataGridViewTextBoxColumn.Name = "종목명DataGridViewTextBoxColumn";
             this.종목명DataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // 평가손익
+            // 현재가DataGridViewTextBoxColumn
             // 
-            this.평가손익.DataPropertyName = "평가손익";
-            this.평가손익.HeaderText = "평가손익";
-            this.평가손익.Name = "평가손익";
-            this.평가손익.ReadOnly = true;
+            this.현재가DataGridViewTextBoxColumn.DataPropertyName = "현재가";
+            this.현재가DataGridViewTextBoxColumn.HeaderText = "현재가";
+            this.현재가DataGridViewTextBoxColumn.Name = "현재가DataGridViewTextBoxColumn";
+            this.현재가DataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // 수익률
+            // 평가손익DataGridViewTextBoxColumn
             // 
-            this.수익률.DataPropertyName = "수익률";
-            this.수익률.HeaderText = "수익률";
-            this.수익률.Name = "수익률";
-            this.수익률.ReadOnly = true;
+            this.평가손익DataGridViewTextBoxColumn.DataPropertyName = "평가손익";
+            this.평가손익DataGridViewTextBoxColumn.HeaderText = "평가손익";
+            this.평가손익DataGridViewTextBoxColumn.Name = "평가손익DataGridViewTextBoxColumn";
+            this.평가손익DataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // 수익률DataGridViewTextBoxColumn
+            // 
+            this.수익률DataGridViewTextBoxColumn.DataPropertyName = "수익률";
+            this.수익률DataGridViewTextBoxColumn.HeaderText = "수익률";
+            this.수익률DataGridViewTextBoxColumn.Name = "수익률DataGridViewTextBoxColumn";
+            this.수익률DataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // 매입가DataGridViewTextBoxColumn
             // 
@@ -1415,13 +1453,6 @@
             this.매매가능수량DataGridViewTextBoxColumn.HeaderText = "매매가능수량";
             this.매매가능수량DataGridViewTextBoxColumn.Name = "매매가능수량DataGridViewTextBoxColumn";
             this.매매가능수량DataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // 현재가AccountStock
-            // 
-            this.현재가AccountStock.DataPropertyName = "현재가";
-            this.현재가AccountStock.HeaderText = "현재가";
-            this.현재가AccountStock.Name = "현재가AccountStock";
-            this.현재가AccountStock.ReadOnly = true;
             // 
             // 매입금액DataGridViewTextBoxColumn
             // 
@@ -1486,12 +1517,12 @@
             this.신용구분명DataGridViewTextBoxColumn.Name = "신용구분명DataGridViewTextBoxColumn";
             this.신용구분명DataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // 대출일
+            // 대출일DataGridViewTextBoxColumn
             // 
-            this.대출일.DataPropertyName = "대출일";
-            this.대출일.HeaderText = "대출일";
-            this.대출일.Name = "대출일";
-            this.대출일.ReadOnly = true;
+            this.대출일DataGridViewTextBoxColumn.DataPropertyName = "대출일";
+            this.대출일DataGridViewTextBoxColumn.HeaderText = "대출일";
+            this.대출일DataGridViewTextBoxColumn.Name = "대출일DataGridViewTextBoxColumn";
+            this.대출일DataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // 전일매수수량DataGridViewTextBoxColumn
             // 
@@ -1520,10 +1551,6 @@
             this.금일매도수량DataGridViewTextBoxColumn.HeaderText = "금일매도수량";
             this.금일매도수량DataGridViewTextBoxColumn.Name = "금일매도수량DataGridViewTextBoxColumn";
             this.금일매도수량DataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // oPW00018계좌평가잔고개별합산BindingSource
-            // 
-            this.oPW00018계좌평가잔고개별합산BindingSource.DataSource = typeof(GloomySpider.OPW00018_계좌평가잔고개별합산);
             // 
             // GloomyMainForm
             // 
@@ -1573,9 +1600,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewStockInfo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.axKHOpenAPI)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.oPT10001주식기본정보BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.conditionSearchBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.oPW00018계좌평가결과BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.oPW00018계좌평가잔고개별합산BindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.oPW00018계좌평가잔고개별합산BindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -1659,15 +1688,17 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn 조회건수;
         private System.Windows.Forms.BindingSource oPW00018계좌평가결과BindingSource;
         private System.Windows.Forms.BindingSource oPW00018계좌평가잔고개별합산BindingSource;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 종목번호;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.BindingSource oPW00018계좌평가잔고개별합산BindingSource1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 종목번호DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 종목명DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 평가손익;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 수익률;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 현재가DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 평가손익DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 수익률DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 매입가DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 전일종가DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 보유수량DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 매매가능수량DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 현재가AccountStock;
         private System.Windows.Forms.DataGridViewTextBoxColumn 매입금액DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 매입수수료DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 평가금액DataGridViewTextBoxColumn;
@@ -1677,12 +1708,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn 보유비중DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 신용구분DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 신용구분명DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 대출일;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 대출일DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 전일매수수량DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 전일매도수량DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 금일매수수량DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 금일매도수량DataGridViewTextBoxColumn;
-        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 

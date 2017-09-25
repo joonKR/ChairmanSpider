@@ -161,13 +161,13 @@ namespace GloomySpider
     {
         private string _종목번호;
         private string _종목명;
+        private string _현재가;
         private string _평가손익;
         private string _수익률;
         private string _매입가;
         private string _전일종가;
         private string _보유수량;
         private string _매매가능수량;
-        private string _현재가;
         private string _매입금액;
         private string _매입수수료;
         private string _평가금액;
@@ -185,13 +185,14 @@ namespace GloomySpider
 
         public string 종목번호 { get => _종목번호.Replace("A",""); set => _종목번호 = value; }
         public string 종목명 { get => _종목명; set => _종목명 = value; }
+        public string 현재가 { get => _현재가.ToIntString(); set => _현재가 = value; }
         public string 평가손익 { get => _평가손익.ToPrice(); set => _평가손익 = value; }
         public string 수익률 { get => _수익률.ToPersentage(); set => _수익률 = value; }
         public string 매입가 { get => _매입가.ToIntString(); set => _매입가 = value; }
         public string 전일종가 { get => _전일종가.ToIntString(); set => _전일종가 = value; }
         public string 보유수량 { get => _보유수량.ToIntString(); set => _보유수량 = value; }
         public string 매매가능수량 { get => _매매가능수량.ToIntString(); set => _매매가능수량 = value; }
-        public string 현재가 { get => _현재가.ToIntString(); set => _현재가 = value; }
+        
         public string 매입금액 { get => _매입금액.ToIntString(); set => _매입금액 = value; }
         public string 매입수수료 { get => _매입수수료.ToIntString(); set => _매입수수료 = value; }
         public string 평가금액 { get => _평가금액.ToIntString(); set => _평가금액 = value; }
