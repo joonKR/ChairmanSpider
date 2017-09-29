@@ -606,7 +606,8 @@ namespace GloomySpider
 
         private void btn정정취소미체결_Click(object sender, EventArgs e)
         {
-
+            NotConclude nc = new NotConclude();
+            nc.Show();
         }
         #endregion
 
