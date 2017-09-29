@@ -19,7 +19,12 @@ namespace GloomySpider
 
         private void NotConclude_Load(object sender, EventArgs e)
         {
+            this.requestTR();
+        }
 
+        private void requestTR()
+        {
+            GloomyAPI.Instance.SetInputValue();
         }
     }
 }
