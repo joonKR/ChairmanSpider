@@ -596,6 +596,11 @@ namespace GloomySpider
 
             }
         }
+
+        private void btn정정취소미체결_Click(object sender, EventArgs e)
+        {
+
+        }
         #endregion
 
         #region 사용자 함수
@@ -786,7 +791,5 @@ namespace GloomySpider
 
             _scrNum = 5000;
         }
-
-      
     }
 }

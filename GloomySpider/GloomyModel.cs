@@ -461,6 +461,74 @@ namespace GloomySpider
         public string 미수불가수량 { get => _미수불가수량; set => _미수불가수량 = value; }
     }
 
+    public class OPT10075_실시간미체결요청
+    {
+        private string _계좌번호;
+        private string _체결구분;
+        private string _매매구분;
+
+        public string 계좌번호 { get => _계좌번호; set => _계좌번호 = value; }
+        public string 체결구분 { get => _체결구분; set => _체결구분 = value; }
+        public string 매매구분 { get => _매매구분; set => _매매구분 = value; }
+    }
+
+    public class OPT10075_실시간미체결
+    {
+        private string _계좌번호;
+        private string _주문번호;
+        private string _관리사번;
+        private string _종목코드;
+        private string _업무구분;
+        private string _주문상태;
+        private string _종목명;
+        private string _주문수량;
+        private string _주문가격;
+        private string _미체결수량;
+        private string _체결누계금액;
+        private string _원주문번호;
+        private string _주문구분;
+        private string _매매구분;
+        private string _시간;
+        private string _체결번호;
+        private string _체결가;
+        private string _체결량;
+        private string _현재가;
+        private string _매도호가;
+        private string _매수호가;
+        private string _단위체결가;
+        private string _단위체결량;
+        private string _당일매매수수료;
+        private string _당일매매세금;
+        private string _개인투자자;
+
+        public string 계좌번호 { get => _계좌번호; set => _계좌번호 = value; }
+        public string 주문번호 { get => _주문번호; set => _주문번호 = value; }
+        public string 관리사번 { get => _관리사번; set => _관리사번 = value; }
+        public string 종목코드 { get => _종목코드; set => _종목코드 = value; }
+        public string 업무구분 { get => _업무구분; set => _업무구분 = value; }
+        public string 주문상태 { get => _주문상태; set => _주문상태 = value; }
+        public string 종목명 { get => _종목명; set => _종목명 = value; }
+        public string 주문수량 { get => _주문수량; set => _주문수량 = value; }
+        public string 주문가격 { get => _주문가격; set => _주문가격 = value; }
+        public string 미체결수량 { get => _미체결수량; set => _미체결수량 = value; }
+        public string 체결누계금액 { get => _체결누계금액; set => _체결누계금액 = value; }
+        public string 원주문번호 { get => _원주문번호; set => _원주문번호 = value; }
+        public string 주문구분 { get => _주문구분; set => _주문구분 = value; }
+        public string 매매구분 { get => _매매구분; set => _매매구분 = value; }
+        public string 시간 { get => _시간; set => _시간 = value; }
+        public string 체결번호 { get => _체결번호; set => _체결번호 = value; }
+        public string 체결가 { get => _체결가; set => _체결가 = value; }
+        public string 체결량 { get => _체결량; set => _체결량 = value; }
+        public string 현재가 { get => _현재가; set => _현재가 = value; }
+        public string 매도호가 { get => _매도호가; set => _매도호가 = value; }
+        public string 매수호가 { get => _매수호가; set => _매수호가 = value; }
+        public string 단위체결가 { get => _단위체결가; set => _단위체결가 = value; }
+        public string 단위체결량 { get => _단위체결량; set => _단위체결량 = value; }
+        public string 당일매매수수료 { get => _당일매매수수료; set => _당일매매수수료 = value; }
+        public string 당일매매세금 { get => _당일매매세금; set => _당일매매세금 = value; }
+        public string 개인투자자 { get => _개인투자자; set => _개인투자자 = value; }
+    }
+
         class KOAErrorCode
     {
         public const int OP_ERR_NONE = 0;     //"정상처리"

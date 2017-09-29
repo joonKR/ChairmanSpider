@@ -87,22 +87,22 @@
             this.tbLoanDate = new MetroFramework.Controls.MetroTextBox();
             this.metroLabel8 = new MetroFramework.Controls.MetroLabel();
             this.tab정정취소 = new MetroFramework.Controls.MetroTabPage();
-            this.metroButton4 = new MetroFramework.Controls.MetroButton();
-            this.metroTextBox5 = new MetroFramework.Controls.MetroTextBox();
+            this.btn정정취소미체결 = new MetroFramework.Controls.MetroButton();
+            this.tb정정취소원주문번호 = new MetroFramework.Controls.MetroTextBox();
             this.metroLabel13 = new MetroFramework.Controls.MetroLabel();
-            this.metroComboBox5 = new MetroFramework.Controls.MetroComboBox();
-            this.metroButton2 = new MetroFramework.Controls.MetroButton();
-            this.metroTextBox3 = new MetroFramework.Controls.MetroTextBox();
-            this.metroTextBox4 = new MetroFramework.Controls.MetroTextBox();
+            this.cb정정취소주문수량퍼센트 = new MetroFramework.Controls.MetroComboBox();
+            this.btn정정취소잔량 = new MetroFramework.Controls.MetroButton();
+            this.tb정정취소주문가격 = new MetroFramework.Controls.MetroTextBox();
+            this.tb정정취소주문수량 = new MetroFramework.Controls.MetroTextBox();
             this.metroLabel11 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel12 = new MetroFramework.Controls.MetroLabel();
-            this.metroButton3 = new MetroFramework.Controls.MetroButton();
+            this.btnCancel = new MetroFramework.Controls.MetroButton();
             this.btn계좌정보조회 = new MetroFramework.Controls.MetroButton();
             this.dataGridViewCondition = new MetroFramework.Controls.MetroGrid();
             this.dataGridViewStockInfo = new MetroFramework.Controls.MetroGrid();
-            this.axKHOpenAPI = new AxKHOpenAPILib.AxKHOpenAPI();
             this.cbAccount = new MetroFramework.Controls.MetroComboBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.axKHOpenAPI = new AxKHOpenAPILib.AxKHOpenAPI();
             this.종목코드 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.종목명 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.현재가 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -157,6 +157,7 @@
             this.tab정정취소.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCondition)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewStockInfo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.axKHOpenAPI)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.oPT10001주식기본정보BindingSource)).BeginInit();
@@ -426,7 +427,7 @@
             this.tabCtr주문유형.ItemSize = new System.Drawing.Size(128, 34);
             this.tabCtr주문유형.Location = new System.Drawing.Point(25, 168);
             this.tabCtr주문유형.Name = "tabCtr주문유형";
-            this.tabCtr주문유형.SelectedIndex = 1;
+            this.tabCtr주문유형.SelectedIndex = 2;
             this.tabCtr주문유형.Size = new System.Drawing.Size(392, 260);
             this.tabCtr주문유형.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.tabCtr주문유형.TabIndex = 41;
@@ -881,16 +882,16 @@
             // 
             // tab정정취소
             // 
-            this.tab정정취소.Controls.Add(this.metroButton4);
-            this.tab정정취소.Controls.Add(this.metroTextBox5);
+            this.tab정정취소.Controls.Add(this.btn정정취소미체결);
+            this.tab정정취소.Controls.Add(this.tb정정취소원주문번호);
             this.tab정정취소.Controls.Add(this.metroLabel13);
-            this.tab정정취소.Controls.Add(this.metroComboBox5);
-            this.tab정정취소.Controls.Add(this.metroButton2);
-            this.tab정정취소.Controls.Add(this.metroTextBox3);
-            this.tab정정취소.Controls.Add(this.metroTextBox4);
+            this.tab정정취소.Controls.Add(this.cb정정취소주문수량퍼센트);
+            this.tab정정취소.Controls.Add(this.btn정정취소잔량);
+            this.tab정정취소.Controls.Add(this.tb정정취소주문가격);
+            this.tab정정취소.Controls.Add(this.tb정정취소주문수량);
             this.tab정정취소.Controls.Add(this.metroLabel11);
             this.tab정정취소.Controls.Add(this.metroLabel12);
-            this.tab정정취소.Controls.Add(this.metroButton3);
+            this.tab정정취소.Controls.Add(this.btnCancel);
             this.tab정정취소.HorizontalScrollbarBarColor = true;
             this.tab정정취소.HorizontalScrollbarHighlightOnWheel = false;
             this.tab정정취소.HorizontalScrollbarSize = 1;
@@ -903,48 +904,49 @@
             this.tab정정취소.VerticalScrollbarHighlightOnWheel = false;
             this.tab정정취소.VerticalScrollbarSize = 2;
             // 
-            // metroButton4
+            // btn정정취소미체결
             // 
-            this.metroButton4.Location = new System.Drawing.Point(229, 16);
-            this.metroButton4.Name = "metroButton4";
-            this.metroButton4.Size = new System.Drawing.Size(152, 30);
-            this.metroButton4.TabIndex = 71;
-            this.metroButton4.Text = "미체결";
-            this.metroButton4.UseSelectable = true;
+            this.btn정정취소미체결.Location = new System.Drawing.Point(229, 16);
+            this.btn정정취소미체결.Name = "btn정정취소미체결";
+            this.btn정정취소미체결.Size = new System.Drawing.Size(152, 30);
+            this.btn정정취소미체결.TabIndex = 71;
+            this.btn정정취소미체결.Text = "미체결";
+            this.btn정정취소미체결.UseSelectable = true;
+            this.btn정정취소미체결.Click += new System.EventHandler(this.btn정정취소미체결_Click);
             // 
-            // metroTextBox5
+            // tb정정취소원주문번호
             // 
             // 
             // 
             // 
-            this.metroTextBox5.CustomButton.Image = null;
-            this.metroTextBox5.CustomButton.Location = new System.Drawing.Point(102, 2);
-            this.metroTextBox5.CustomButton.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
-            this.metroTextBox5.CustomButton.Name = "";
-            this.metroTextBox5.CustomButton.Size = new System.Drawing.Size(25, 25);
-            this.metroTextBox5.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.metroTextBox5.CustomButton.TabIndex = 1;
-            this.metroTextBox5.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.metroTextBox5.CustomButton.UseSelectable = true;
-            this.metroTextBox5.CustomButton.Visible = false;
-            this.metroTextBox5.Enabled = false;
-            this.metroTextBox5.FontSize = MetroFramework.MetroTextBoxSize.Medium;
-            this.metroTextBox5.Lines = new string[0];
-            this.metroTextBox5.Location = new System.Drawing.Point(91, 16);
-            this.metroTextBox5.MaxLength = 32767;
-            this.metroTextBox5.Name = "metroTextBox5";
-            this.metroTextBox5.PasswordChar = '\0';
-            this.metroTextBox5.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.metroTextBox5.SelectedText = "";
-            this.metroTextBox5.SelectionLength = 0;
-            this.metroTextBox5.SelectionStart = 0;
-            this.metroTextBox5.ShortcutsEnabled = true;
-            this.metroTextBox5.Size = new System.Drawing.Size(130, 30);
-            this.metroTextBox5.TabIndex = 70;
-            this.metroTextBox5.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.metroTextBox5.UseSelectable = true;
-            this.metroTextBox5.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.metroTextBox5.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.tb정정취소원주문번호.CustomButton.Image = null;
+            this.tb정정취소원주문번호.CustomButton.Location = new System.Drawing.Point(102, 2);
+            this.tb정정취소원주문번호.CustomButton.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.tb정정취소원주문번호.CustomButton.Name = "";
+            this.tb정정취소원주문번호.CustomButton.Size = new System.Drawing.Size(25, 25);
+            this.tb정정취소원주문번호.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.tb정정취소원주문번호.CustomButton.TabIndex = 1;
+            this.tb정정취소원주문번호.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.tb정정취소원주문번호.CustomButton.UseSelectable = true;
+            this.tb정정취소원주문번호.CustomButton.Visible = false;
+            this.tb정정취소원주문번호.Enabled = false;
+            this.tb정정취소원주문번호.FontSize = MetroFramework.MetroTextBoxSize.Medium;
+            this.tb정정취소원주문번호.Lines = new string[0];
+            this.tb정정취소원주문번호.Location = new System.Drawing.Point(91, 16);
+            this.tb정정취소원주문번호.MaxLength = 32767;
+            this.tb정정취소원주문번호.Name = "tb정정취소원주문번호";
+            this.tb정정취소원주문번호.PasswordChar = '\0';
+            this.tb정정취소원주문번호.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.tb정정취소원주문번호.SelectedText = "";
+            this.tb정정취소원주문번호.SelectionLength = 0;
+            this.tb정정취소원주문번호.SelectionStart = 0;
+            this.tb정정취소원주문번호.ShortcutsEnabled = true;
+            this.tb정정취소원주문번호.Size = new System.Drawing.Size(130, 30);
+            this.tb정정취소원주문번호.TabIndex = 70;
+            this.tb정정취소원주문번호.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.tb정정취소원주문번호.UseSelectable = true;
+            this.tb정정취소원주문번호.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.tb정정취소원주문번호.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
             // metroLabel13
             // 
@@ -955,11 +957,11 @@
             this.metroLabel13.TabIndex = 69;
             this.metroLabel13.Text = "원주문번호";
             // 
-            // metroComboBox5
+            // cb정정취소주문수량퍼센트
             // 
-            this.metroComboBox5.FormattingEnabled = true;
-            this.metroComboBox5.ItemHeight = 24;
-            this.metroComboBox5.Items.AddRange(new object[] {
+            this.cb정정취소주문수량퍼센트.FormattingEnabled = true;
+            this.cb정정취소주문수량퍼센트.ItemHeight = 24;
+            this.cb정정취소주문수량퍼센트.Items.AddRange(new object[] {
             "100%",
             "90%",
             "80%",
@@ -970,86 +972,86 @@
             "30%",
             "20%",
             "10%"});
-            this.metroComboBox5.Location = new System.Drawing.Point(229, 64);
-            this.metroComboBox5.Name = "metroComboBox5";
-            this.metroComboBox5.Size = new System.Drawing.Size(65, 30);
-            this.metroComboBox5.TabIndex = 68;
-            this.metroComboBox5.UseSelectable = true;
+            this.cb정정취소주문수량퍼센트.Location = new System.Drawing.Point(229, 64);
+            this.cb정정취소주문수량퍼센트.Name = "cb정정취소주문수량퍼센트";
+            this.cb정정취소주문수량퍼센트.Size = new System.Drawing.Size(65, 30);
+            this.cb정정취소주문수량퍼센트.TabIndex = 68;
+            this.cb정정취소주문수량퍼센트.UseSelectable = true;
             // 
-            // metroButton2
+            // btn정정취소잔량
             // 
-            this.metroButton2.Location = new System.Drawing.Point(300, 64);
-            this.metroButton2.Name = "metroButton2";
-            this.metroButton2.Size = new System.Drawing.Size(81, 30);
-            this.metroButton2.TabIndex = 67;
-            this.metroButton2.Text = "잔량";
-            this.metroButton2.UseSelectable = true;
+            this.btn정정취소잔량.Location = new System.Drawing.Point(300, 64);
+            this.btn정정취소잔량.Name = "btn정정취소잔량";
+            this.btn정정취소잔량.Size = new System.Drawing.Size(81, 30);
+            this.btn정정취소잔량.TabIndex = 67;
+            this.btn정정취소잔량.Text = "잔량";
+            this.btn정정취소잔량.UseSelectable = true;
             // 
-            // metroTextBox3
-            // 
-            // 
-            // 
-            // 
-            this.metroTextBox3.CustomButton.Image = null;
-            this.metroTextBox3.CustomButton.Location = new System.Drawing.Point(102, 2);
-            this.metroTextBox3.CustomButton.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
-            this.metroTextBox3.CustomButton.Name = "";
-            this.metroTextBox3.CustomButton.Size = new System.Drawing.Size(25, 25);
-            this.metroTextBox3.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.metroTextBox3.CustomButton.TabIndex = 1;
-            this.metroTextBox3.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.metroTextBox3.CustomButton.UseSelectable = true;
-            this.metroTextBox3.CustomButton.Visible = false;
-            this.metroTextBox3.FontSize = MetroFramework.MetroTextBoxSize.Medium;
-            this.metroTextBox3.Lines = new string[0];
-            this.metroTextBox3.Location = new System.Drawing.Point(91, 113);
-            this.metroTextBox3.MaxLength = 32767;
-            this.metroTextBox3.Name = "metroTextBox3";
-            this.metroTextBox3.PasswordChar = '\0';
-            this.metroTextBox3.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.metroTextBox3.SelectedText = "";
-            this.metroTextBox3.SelectionLength = 0;
-            this.metroTextBox3.SelectionStart = 0;
-            this.metroTextBox3.ShortcutsEnabled = true;
-            this.metroTextBox3.Size = new System.Drawing.Size(130, 30);
-            this.metroTextBox3.TabIndex = 66;
-            this.metroTextBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.metroTextBox3.UseSelectable = true;
-            this.metroTextBox3.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.metroTextBox3.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            // 
-            // metroTextBox4
+            // tb정정취소주문가격
             // 
             // 
             // 
             // 
-            this.metroTextBox4.CustomButton.Image = null;
-            this.metroTextBox4.CustomButton.Location = new System.Drawing.Point(102, 2);
-            this.metroTextBox4.CustomButton.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
-            this.metroTextBox4.CustomButton.Name = "";
-            this.metroTextBox4.CustomButton.Size = new System.Drawing.Size(25, 25);
-            this.metroTextBox4.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.metroTextBox4.CustomButton.TabIndex = 1;
-            this.metroTextBox4.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.metroTextBox4.CustomButton.UseSelectable = true;
-            this.metroTextBox4.CustomButton.Visible = false;
-            this.metroTextBox4.FontSize = MetroFramework.MetroTextBoxSize.Medium;
-            this.metroTextBox4.Lines = new string[0];
-            this.metroTextBox4.Location = new System.Drawing.Point(91, 64);
-            this.metroTextBox4.MaxLength = 32767;
-            this.metroTextBox4.Name = "metroTextBox4";
-            this.metroTextBox4.PasswordChar = '\0';
-            this.metroTextBox4.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.metroTextBox4.SelectedText = "";
-            this.metroTextBox4.SelectionLength = 0;
-            this.metroTextBox4.SelectionStart = 0;
-            this.metroTextBox4.ShortcutsEnabled = true;
-            this.metroTextBox4.Size = new System.Drawing.Size(130, 30);
-            this.metroTextBox4.TabIndex = 65;
-            this.metroTextBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.metroTextBox4.UseSelectable = true;
-            this.metroTextBox4.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.metroTextBox4.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.tb정정취소주문가격.CustomButton.Image = null;
+            this.tb정정취소주문가격.CustomButton.Location = new System.Drawing.Point(102, 2);
+            this.tb정정취소주문가격.CustomButton.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.tb정정취소주문가격.CustomButton.Name = "";
+            this.tb정정취소주문가격.CustomButton.Size = new System.Drawing.Size(25, 25);
+            this.tb정정취소주문가격.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.tb정정취소주문가격.CustomButton.TabIndex = 1;
+            this.tb정정취소주문가격.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.tb정정취소주문가격.CustomButton.UseSelectable = true;
+            this.tb정정취소주문가격.CustomButton.Visible = false;
+            this.tb정정취소주문가격.FontSize = MetroFramework.MetroTextBoxSize.Medium;
+            this.tb정정취소주문가격.Lines = new string[0];
+            this.tb정정취소주문가격.Location = new System.Drawing.Point(91, 113);
+            this.tb정정취소주문가격.MaxLength = 32767;
+            this.tb정정취소주문가격.Name = "tb정정취소주문가격";
+            this.tb정정취소주문가격.PasswordChar = '\0';
+            this.tb정정취소주문가격.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.tb정정취소주문가격.SelectedText = "";
+            this.tb정정취소주문가격.SelectionLength = 0;
+            this.tb정정취소주문가격.SelectionStart = 0;
+            this.tb정정취소주문가격.ShortcutsEnabled = true;
+            this.tb정정취소주문가격.Size = new System.Drawing.Size(130, 30);
+            this.tb정정취소주문가격.TabIndex = 66;
+            this.tb정정취소주문가격.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.tb정정취소주문가격.UseSelectable = true;
+            this.tb정정취소주문가격.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.tb정정취소주문가격.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
+            // tb정정취소주문수량
+            // 
+            // 
+            // 
+            // 
+            this.tb정정취소주문수량.CustomButton.Image = null;
+            this.tb정정취소주문수량.CustomButton.Location = new System.Drawing.Point(102, 2);
+            this.tb정정취소주문수량.CustomButton.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.tb정정취소주문수량.CustomButton.Name = "";
+            this.tb정정취소주문수량.CustomButton.Size = new System.Drawing.Size(25, 25);
+            this.tb정정취소주문수량.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.tb정정취소주문수량.CustomButton.TabIndex = 1;
+            this.tb정정취소주문수량.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.tb정정취소주문수량.CustomButton.UseSelectable = true;
+            this.tb정정취소주문수량.CustomButton.Visible = false;
+            this.tb정정취소주문수량.FontSize = MetroFramework.MetroTextBoxSize.Medium;
+            this.tb정정취소주문수량.Lines = new string[0];
+            this.tb정정취소주문수량.Location = new System.Drawing.Point(91, 64);
+            this.tb정정취소주문수량.MaxLength = 32767;
+            this.tb정정취소주문수량.Name = "tb정정취소주문수량";
+            this.tb정정취소주문수량.PasswordChar = '\0';
+            this.tb정정취소주문수량.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.tb정정취소주문수량.SelectedText = "";
+            this.tb정정취소주문수량.SelectionLength = 0;
+            this.tb정정취소주문수량.SelectionStart = 0;
+            this.tb정정취소주문수량.ShortcutsEnabled = true;
+            this.tb정정취소주문수량.Size = new System.Drawing.Size(130, 30);
+            this.tb정정취소주문수량.TabIndex = 65;
+            this.tb정정취소주문수량.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.tb정정취소주문수량.UseSelectable = true;
+            this.tb정정취소주문수량.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.tb정정취소주문수량.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
             // metroLabel11
             // 
@@ -1069,14 +1071,14 @@
             this.metroLabel12.TabIndex = 63;
             this.metroLabel12.Text = "주문수량";
             // 
-            // metroButton3
+            // btnCancel
             // 
-            this.metroButton3.Location = new System.Drawing.Point(11, 157);
-            this.metroButton3.Name = "metroButton3";
-            this.metroButton3.Size = new System.Drawing.Size(370, 48);
-            this.metroButton3.TabIndex = 62;
-            this.metroButton3.Text = "취소";
-            this.metroButton3.UseSelectable = true;
+            this.btnCancel.Location = new System.Drawing.Point(11, 157);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(370, 48);
+            this.btnCancel.TabIndex = 62;
+            this.btnCancel.Text = "취소";
+            this.btnCancel.UseSelectable = true;
             // 
             // btn계좌정보조회
             // 
@@ -1206,6 +1208,26 @@
             this.dataGridViewStockInfo.TabIndex = 42;
             this.dataGridViewStockInfo.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridViewStockInfo_CellFormatting);
             this.dataGridViewStockInfo.DoubleClick += new System.EventHandler(this.dataGridViewStockInfo_DoubleClick);
+            // 
+            // cbAccount
+            // 
+            this.cbAccount.FormattingEnabled = true;
+            this.cbAccount.ItemHeight = 24;
+            this.cbAccount.Location = new System.Drawing.Point(94, 136);
+            this.cbAccount.Name = "cbAccount";
+            this.cbAccount.Size = new System.Drawing.Size(130, 30);
+            this.cbAccount.TabIndex = 52;
+            this.cbAccount.UseSelectable = true;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::GloomySpider.Properties.Resources.gloomyspider;
+            this.pictureBox1.Location = new System.Drawing.Point(199, 15);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(57, 50);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 53;
+            this.pictureBox1.TabStop = false;
             // 
             // axKHOpenAPI
             // 
@@ -1553,7 +1575,7 @@
             this.Controls.Add(this.bttnLogIn);
             this.Controls.Add(this.axKHOpenAPI);
             this.Controls.Add(this.tabCtr주문유형);
-            this.Font = new System.Drawing.Font("Malgun Gothic", 10F);
+            this.Font = new System.Drawing.Font("맑은 고딕", 10F);
             this.HelpButton = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
@@ -1576,6 +1598,7 @@
             this.tab정정취소.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCondition)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewStockInfo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.axKHOpenAPI)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.oPT10001주식기본정보BindingSource)).EndInit();
@@ -1632,16 +1655,16 @@
         private MetroFramework.Controls.MetroLabel metroLabel9;
         private MetroFramework.Controls.MetroLabel metroLabel10;
         private MetroFramework.Controls.MetroButton btnSell;
-        private MetroFramework.Controls.MetroButton metroButton4;
-        private MetroFramework.Controls.MetroTextBox metroTextBox5;
+        private MetroFramework.Controls.MetroButton btn정정취소미체결;
+        private MetroFramework.Controls.MetroTextBox tb정정취소원주문번호;
         private MetroFramework.Controls.MetroLabel metroLabel13;
-        private MetroFramework.Controls.MetroComboBox metroComboBox5;
-        private MetroFramework.Controls.MetroButton metroButton2;
-        private MetroFramework.Controls.MetroTextBox metroTextBox3;
-        private MetroFramework.Controls.MetroTextBox metroTextBox4;
+        private MetroFramework.Controls.MetroComboBox cb정정취소주문수량퍼센트;
+        private MetroFramework.Controls.MetroButton btn정정취소잔량;
+        private MetroFramework.Controls.MetroTextBox tb정정취소주문가격;
+        private MetroFramework.Controls.MetroTextBox tb정정취소주문수량;
         private MetroFramework.Controls.MetroLabel metroLabel11;
         private MetroFramework.Controls.MetroLabel metroLabel12;
-        private MetroFramework.Controls.MetroButton metroButton3;
+        private MetroFramework.Controls.MetroButton btnCancel;
         private MetroFramework.Controls.MetroGrid dataGridViewCondition;
         private MetroFramework.Controls.MetroGrid dataGridViewStockInfo;
         private MetroFramework.Controls.MetroComboBox cbAccount;
