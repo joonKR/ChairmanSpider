@@ -17,6 +17,8 @@ namespace GloomySpider
     {
         private int conditionLoadState;
         private int _scrNum = 5000;
+
+        List<OPT10001_주식기본정보> ConditionResultStockList = new List<OPT10001_주식기본정보>();
         public GloomyMainForm()
         {
             InitializeComponent();
@@ -44,6 +46,32 @@ namespace GloomySpider
         }
 
         #region 키움 API 이벤트
+        private void API_OnReceiveRealData(object sender, _DKHOpenAPIEvents_OnReceiveRealDataEvent e)
+        {
+            if (e.sRealType == "주식체결")
+            {
+                string stockCode = e.sRealKey;
+                string stockPrice = Int32.Parse(axKHOpenAPI.GetCommRealData(e.sRealType, 10).Trim()).ToString();
+                string stock전일대비 = axKHOpenAPI.GetCommRealData(e.sRealType, 11).Trim();
+                string stock등락율 = axKHOpenAPI.GetCommRealData(e.sRealType, 12).Trim().ToPersentage();
+
+                if (ConditionResultStockList.Where(x => x.종목코드.Equals(stockCode)).ToList()[0].현재가.Equals(stockPrice))
+                    return;
+
+                ConditionResultStockList.Where(x => x.종목코드.Equals(stockCode)).ToList().ForEach(i => { i.현재가 = stockPrice;i.전일대비 = stock전일대비; i.등락율 = stock등락율; });
+                this.dataGridViewStockInfo.DataSource = ConditionResultStockList.Select(x => new { x.종목코드, x.종목명, x.현재가, x.전일대비, x.등락율 }).ToList();
+
+                foreach(DataGridViewRow row in this.dataGridViewStockInfo.Rows)
+                {
+                    if (row.Cells[0].Value.Equals(stockCode))
+                    {
+                        this.dataGridViewStockInfo.Rows[row.Index].Selected = true;
+                        break;
+                    }
+                }
+            }
+        }
+
         private void Get_OPW00011_증거금율별주문가능수량조회요청()
         {
             OPW00011_증거금율별주문가능수량조회요청 data = new OPW00011_증거금율별주문가능수량조회요청();
@@ -116,10 +144,7 @@ namespace GloomySpider
             this.dataGridViewCondition.DataSource = dataList;
         }
 
-        private void API_OnReceiveRealData(object sender, _DKHOpenAPIEvents_OnReceiveRealDataEvent e)
-        {
-
-        }
+     
 
         private void API_OnReceiveRealCondition(object sender, _DKHOpenAPIEvents_OnReceiveRealConditionEvent e)
         {
@@ -201,8 +226,9 @@ namespace GloomySpider
             {
                 #region 조건검색결과
                 int count = axKHOpenAPI.GetRepeatCnt(e.sTrCode, e.sRQName);
+                string stockList = "";
 
-                List<OPT10001_주식기본정보> dataList = new List<OPT10001_주식기본정보>();
+                ConditionResultStockList.Clear();
                 for (int i = 0; i < count; i++)
                 {
                     this.dataGridViewStockInfo.DataSource = null;
@@ -217,11 +243,21 @@ namespace GloomySpider
                     data.저가 = axKHOpenAPI.GetCommData(e.sTrCode, e.sRQName, i, "종목코드").Trim();
                     data.연중최저 = axKHOpenAPI.GetCommData(e.sTrCode, e.sRQName, i, "연중최저").Trim();
                     data.연중최고 = axKHOpenAPI.GetCommData(e.sTrCode, e.sRQName, i, "연중최고").Trim();
-                    dataList.Add(data);
+                    ConditionResultStockList.Add(data);
+
+                    if(i==count-1)
+                        stockList += data.종목코드;
+                    else
+                        stockList += data.종목코드 + ";";
                 }
-                this.dataGridViewStockInfo.DataSource = dataList.Select(x => new { x.종목코드, x.종목명, x.현재가,x.전일대비, x.등락율}).ToList();
+                this.dataGridViewStockInfo.DataSource = ConditionResultStockList.Select(x => new { x.종목코드, x.종목명, x.현재가,x.전일대비, x.등락율}).ToList();
                 this.dataGridViewStockInfo.SelectedRows[0].Selected = false;
                 Logger(Log.조회, "조건검색결과 완료");
+
+                long lRet = axKHOpenAPI.SetRealReg(GetScreenNum(),              // 화면번호
+                                 stockList,    // 종콕코드 리스트
+                                  "10;12",//FID번호
+                                  "0");       // 0 : 마지막에 등록한 종목만 실시간
                 #endregion
             }
             else if (e.sRQName.Equals("계좌평가현황요청"))
