@@ -42,10 +42,11 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GloomyMainForm));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
             this.bttnLogIn = new MetroFramework.Controls.MetroButton();
             this.bttnConditionLoad = new MetroFramework.Controls.MetroButton();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
@@ -124,9 +125,9 @@
             this.oPW00018계좌평가결과BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.oPW00018계좌평가잔고개별합산BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.oPW00018계좌평가잔고개별합산BindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.종목번호DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.종목번호 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.종목명DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.현재가DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.현재가AccountStock = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.평가손익 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.수익률 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.매입가DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -142,7 +143,7 @@
             this.보유비중DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.신용구분DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.신용구분명DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.대출일DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.대출일 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.전일매수수량DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.전일매도수량DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.금일매수수량DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -159,7 +160,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewStockInfo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.axKHOpenAPI)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.oPT10001주식기본정보BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.conditionSearchBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.oPW00018계좌평가결과BindingSource)).BeginInit();
@@ -282,9 +282,9 @@
             this.dataGridViewAccountStock.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridViewAccountStock.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewAccountStock.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.종목번호DataGridViewTextBoxColumn,
+            this.종목번호,
             this.종목명DataGridViewTextBoxColumn,
-            this.현재가DataGridViewTextBoxColumn,
+            this.현재가AccountStock,
             this.평가손익,
             this.수익률,
             this.매입가DataGridViewTextBoxColumn,
@@ -300,7 +300,7 @@
             this.보유비중DataGridViewTextBoxColumn,
             this.신용구분DataGridViewTextBoxColumn,
             this.신용구분명DataGridViewTextBoxColumn,
-            this.대출일DataGridViewTextBoxColumn,
+            this.대출일,
             this.전일매수수량DataGridViewTextBoxColumn,
             this.전일매도수량DataGridViewTextBoxColumn,
             this.금일매수수량DataGridViewTextBoxColumn,
@@ -1172,14 +1172,14 @@
             this.전일대비,
             this.등락율});
             this.dataGridViewStockInfo.DataSource = this.oPT10001주식기본정보BindingSource;
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewStockInfo.DefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle15.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
+            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewStockInfo.DefaultCellStyle = dataGridViewCellStyle15;
             this.dataGridViewStockInfo.EnableHeadersVisualStyles = false;
             this.dataGridViewStockInfo.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.dataGridViewStockInfo.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
@@ -1188,19 +1188,19 @@
             this.dataGridViewStockInfo.Name = "dataGridViewStockInfo";
             this.dataGridViewStockInfo.ReadOnly = true;
             this.dataGridViewStockInfo.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle15.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewStockInfo.RowHeadersDefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle16.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewStockInfo.RowHeadersDefaultCellStyle = dataGridViewCellStyle16;
             this.dataGridViewStockInfo.RowHeadersVisible = false;
             this.dataGridViewStockInfo.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle16.ForeColor = System.Drawing.Color.Black;
-            this.dataGridViewStockInfo.RowsDefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle17.ForeColor = System.Drawing.Color.Black;
+            this.dataGridViewStockInfo.RowsDefaultCellStyle = dataGridViewCellStyle17;
             this.dataGridViewStockInfo.RowTemplate.Height = 27;
             this.dataGridViewStockInfo.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewStockInfo.Size = new System.Drawing.Size(518, 324);
@@ -1239,26 +1239,6 @@
             this.axKHOpenAPI.TabIndex = 0;
             this.axKHOpenAPI.Visible = false;
             // 
-            // cbAccount
-            // 
-            this.cbAccount.FormattingEnabled = true;
-            this.cbAccount.ItemHeight = 24;
-            this.cbAccount.Location = new System.Drawing.Point(94, 136);
-            this.cbAccount.Name = "cbAccount";
-            this.cbAccount.Size = new System.Drawing.Size(130, 30);
-            this.cbAccount.TabIndex = 52;
-            this.cbAccount.UseSelectable = true;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::GloomySpider.Properties.Resources.gloomyspider;
-            this.pictureBox1.Location = new System.Drawing.Point(199, 15);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(57, 50);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 53;
-            this.pictureBox1.TabStop = false;
-            // 
             // 종목코드
             // 
             this.종목코드.DataPropertyName = "종목코드";
@@ -1269,6 +1249,8 @@
             // 종목명
             // 
             this.종목명.DataPropertyName = "종목명";
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.종목명.DefaultCellStyle = dataGridViewCellStyle14;
             this.종목명.HeaderText = "종목명";
             this.종목명.Name = "종목명";
             this.종목명.ReadOnly = true;
@@ -1391,12 +1373,12 @@
             // 
             this.oPW00018계좌평가잔고개별합산BindingSource1.DataSource = typeof(GloomySpider.OPW00018_계좌평가잔고개별합산);
             // 
-            // 종목번호DataGridViewTextBoxColumn
+            // 종목번호
             // 
-            this.종목번호DataGridViewTextBoxColumn.DataPropertyName = "종목번호";
-            this.종목번호DataGridViewTextBoxColumn.HeaderText = "종목번호";
-            this.종목번호DataGridViewTextBoxColumn.Name = "종목번호DataGridViewTextBoxColumn";
-            this.종목번호DataGridViewTextBoxColumn.ReadOnly = true;
+            this.종목번호.DataPropertyName = "종목번호";
+            this.종목번호.HeaderText = "종목번호";
+            this.종목번호.Name = "종목번호";
+            this.종목번호.ReadOnly = true;
             // 
             // 종목명DataGridViewTextBoxColumn
             // 
@@ -1405,12 +1387,12 @@
             this.종목명DataGridViewTextBoxColumn.Name = "종목명DataGridViewTextBoxColumn";
             this.종목명DataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // 현재가DataGridViewTextBoxColumn
+            // 현재가AccountStock
             // 
-            this.현재가DataGridViewTextBoxColumn.DataPropertyName = "현재가";
-            this.현재가DataGridViewTextBoxColumn.HeaderText = "현재가";
-            this.현재가DataGridViewTextBoxColumn.Name = "현재가DataGridViewTextBoxColumn";
-            this.현재가DataGridViewTextBoxColumn.ReadOnly = true;
+            this.현재가AccountStock.DataPropertyName = "현재가";
+            this.현재가AccountStock.HeaderText = "현재가";
+            this.현재가AccountStock.Name = "현재가AccountStock";
+            this.현재가AccountStock.ReadOnly = true;
             // 
             // 평가손익
             // 
@@ -1517,12 +1499,12 @@
             this.신용구분명DataGridViewTextBoxColumn.Name = "신용구분명DataGridViewTextBoxColumn";
             this.신용구분명DataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // 대출일DataGridViewTextBoxColumn
+            // 대출일
             // 
-            this.대출일DataGridViewTextBoxColumn.DataPropertyName = "대출일";
-            this.대출일DataGridViewTextBoxColumn.HeaderText = "대출일";
-            this.대출일DataGridViewTextBoxColumn.Name = "대출일DataGridViewTextBoxColumn";
-            this.대출일DataGridViewTextBoxColumn.ReadOnly = true;
+            this.대출일.DataPropertyName = "대출일";
+            this.대출일.HeaderText = "대출일";
+            this.대출일.Name = "대출일";
+            this.대출일.ReadOnly = true;
             // 
             // 전일매수수량DataGridViewTextBoxColumn
             // 
@@ -1575,7 +1557,7 @@
             this.Controls.Add(this.bttnLogIn);
             this.Controls.Add(this.axKHOpenAPI);
             this.Controls.Add(this.tabCtr주문유형);
-            this.Font = new System.Drawing.Font("맑은 고딕", 10F);
+            this.Font = new System.Drawing.Font("Malgun Gothic", 10F);
             this.HelpButton = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
@@ -1600,7 +1582,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewStockInfo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.axKHOpenAPI)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.oPT10001주식기본정보BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.conditionSearchBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.oPW00018계좌평가결과BindingSource)).EndInit();
@@ -1672,11 +1653,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn 조건명;
         private System.Windows.Forms.BindingSource conditionSearchBindingSource;
         private System.Windows.Forms.BindingSource oPT10001주식기본정보BindingSource;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 종목코드;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 종목명;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 현재가;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 전일대비;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 등락율;
         private System.Windows.Forms.DataGridViewTextBoxColumn 총매입금액;
         private System.Windows.Forms.DataGridViewTextBoxColumn 총평가금액;
         private System.Windows.Forms.DataGridViewTextBoxColumn 총평가손익금액;
@@ -1690,9 +1666,14 @@
         private System.Windows.Forms.BindingSource oPW00018계좌평가잔고개별합산BindingSource;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.BindingSource oPW00018계좌평가잔고개별합산BindingSource1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 종목번호DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 종목코드;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 종목명;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 현재가;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 전일대비;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 등락율;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 종목번호;
         private System.Windows.Forms.DataGridViewTextBoxColumn 종목명DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 현재가DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 현재가AccountStock;
         private System.Windows.Forms.DataGridViewTextBoxColumn 평가손익;
         private System.Windows.Forms.DataGridViewTextBoxColumn 수익률;
         private System.Windows.Forms.DataGridViewTextBoxColumn 매입가DataGridViewTextBoxColumn;
@@ -1708,7 +1689,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn 보유비중DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 신용구분DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 신용구분명DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 대출일DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 대출일;
         private System.Windows.Forms.DataGridViewTextBoxColumn 전일매수수량DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 전일매도수량DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 금일매수수량DataGridViewTextBoxColumn;

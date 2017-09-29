@@ -18,91 +18,15 @@ namespace GloomySpider
     {
         private string _종목코드;
         private string _종목명;
-        private string _결산월;
-        private string _액면가;
-        private string _자본금;
-        private string _상장주식;
-        private string _신용비율;
-        private string _연중최고;
-        private string _연중최저;
-        private string _시가총액;
-        private string _시가총액비중;
-        private string _외인소진률;
-        private string _대용가;
-        private string _PER;
-        private string _EPS;
-        private string _ROE;
-        private string _PBR;
-        private string _EV;
-        private string _BPS;
-        private string _매출액;
-        private string _영업이익;
-        private string _당기순이익;
-        private string _D250최고;
-        private string _D250최저;
-        private string _시가;
-        private string _고가;
-        private string _저가;
-        private string _상한가;
-        private string _하한가;
-        private string _기준가;
-        private string _예상체결가;
-        private string _예상체결수량;
-        private string _D250최고가일;
-        private string _D250최고가대비율;
-        private string _D250최저가일;
-        private string _D250최저가대비율;
         private string _현재가;
-        private string _대비기호;
         private string _전일대비;
         private string _등락율;
-        private string _거래량;
-        private string _거래대비;
-        private string _액면가단위;
 
         public string 종목코드 { get => _종목코드; set => _종목코드 = value; }
         public string 종목명 { get => _종목명; set => _종목명 = value; }
-        public string 결산월 { get => _결산월; set => _결산월 = value; }
-        public string 액면가 { get => _액면가; set => _액면가 = value; }
-        public string 자본금 { get => _자본금; set => _자본금 = value; }
-        public string 상장주식 { get => _상장주식; set => _상장주식 = value; }
-        public string 신용비율 { get => _신용비율; set => _신용비율 = value; }
-        public string 연중최고 { get => _연중최고; set => _연중최고 = value; }
-        public string 연중최저 { get => _연중최저; set => _연중최저 = value; }
-        public string 시가총액 { get => _시가총액; set => _시가총액 = value; }
-        public string 시가총액비중 { get => _시가총액비중; set => _시가총액비중 = value; }
-        public string 외인소진률 { get => _외인소진률; set => _외인소진률 = value; }
-        public string 대용가 { get => _대용가; set => _대용가 = value; }
-        public string PER { get => _PER; set => _PER = value; }
-        public string EPS { get => _EPS; set => _EPS = value; }
-        public string ROE { get => _ROE; set => _ROE = value; }
-        public string PBR { get => _PBR; set => _PBR = value; }
-        public string EV { get => _EV; set => _EV = value; }
-        public string BPS { get => _BPS; set => _BPS = value; }
-        public string 매출액 { get => _매출액; set => _매출액 = value; }
-        public string 영업이익 { get => _영업이익; set => _영업이익 = value; }
-        public string 당기순이익 { get => _당기순이익; set => _당기순이익 = value; }
-        public string D250최고 { get => _D250최고; set => _D250최고 = value; }
-        public string D250최저 { get => _D250최저; set => _D250최저 = value; }
-        public string 시가 { get => _시가; set => _시가 = value; }
-        public string 고가 { get => _고가; set => _고가 = value; }
-        public string 저가 { get => _저가; set => _저가 = value; }
-        public string 상한가 { get => _상한가; set => _상한가 = value; }
-        public string 하한가 { get => _하한가; set => _하한가 = value; }
-        public string 기준가 { get => _기준가; set => _기준가 = value; }
-        public string 예상체결가 { get => _예상체결가; set => _예상체결가 = value; }
-        public string 예상체결수량 { get => _예상체결수량; set => _예상체결수량 = value; }
-        public string D250최고가일 { get => _D250최고가일; set => _D250최고가일 = value; }
-        public string D250최고가대비율 { get => _D250최고가대비율; set => _D250최고가대비율 = value; }
-        public string D250최저가일 { get => _D250최저가일; set => _D250최저가일 = value; }
-        public string D250최저가대비율 { get => _D250최저가대비율; set => _D250최저가대비율 = value; }
         public string 현재가 { get => _현재가.Replace("-","").Replace("+",""); set => _현재가 = value; }
-        public string 대비기호 { get => _대비기호; set => _대비기호 = value; }
         public string 전일대비 { get => _전일대비; set => _전일대비 = value; }
         public string 등락율 { get => _등락율; set => _등락율 = value; }
-        public string 거래량 { get => _거래량; set => _거래량 = value; }
-        public string 거래대비 { get => _거래대비; set => _거래대비 = value; }
-        public string 액면가단위 { get => _액면가단위; set => _액면가단위 = value; }
     }
 
         public class ConditionSearch

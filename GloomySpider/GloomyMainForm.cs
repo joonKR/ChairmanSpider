@@ -150,6 +150,18 @@ namespace GloomySpider
         {
             string type = e.strType.Equals("I") ? "종목편입" : "종목이탈";
             Logger(Log.일반, e.strConditionName + ";" + type + ";" + e.sTrCode);
+
+            if (type.Equals("종목편입"))
+            {
+
+            }
+            else
+            {
+                var found = ConditionResultStockList.Find(x => x.종목코드.Equals(e.sTrCode));
+                if (found != null) ConditionResultStockList.Remove(found);
+            }
+
+
         }
 
         private void API_OnReceiveTrData(object sender, _DKHOpenAPIEvents_OnReceiveTrDataEvent e)
@@ -237,12 +249,7 @@ namespace GloomySpider
                     data.종목명 = axKHOpenAPI.GetCommData(e.sTrCode, e.sRQName, i, "종목명").Trim();
                     data.현재가= axKHOpenAPI.GetCommData(e.sTrCode, e.sRQName, i, "현재가").Trim();
                     data.등락율 = axKHOpenAPI.GetCommData(e.sTrCode, e.sRQName, i, "등락율").Trim();
-                    data.거래량 = axKHOpenAPI.GetCommData(e.sTrCode, e.sRQName, i, "거래량").Trim();
                     data.전일대비 = axKHOpenAPI.GetCommData(e.sTrCode, e.sRQName, i, "전일대비").Trim();
-                    data.고가 = axKHOpenAPI.GetCommData(e.sTrCode, e.sRQName, i, "고가").Trim();
-                    data.저가 = axKHOpenAPI.GetCommData(e.sTrCode, e.sRQName, i, "종목코드").Trim();
-                    data.연중최저 = axKHOpenAPI.GetCommData(e.sTrCode, e.sRQName, i, "연중최저").Trim();
-                    data.연중최고 = axKHOpenAPI.GetCommData(e.sTrCode, e.sRQName, i, "연중최고").Trim();
                     ConditionResultStockList.Add(data);
 
                     if(i==count-1)
