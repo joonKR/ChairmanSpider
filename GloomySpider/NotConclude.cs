@@ -24,7 +24,7 @@ namespace GloomySpider
 
         private void requestTR()
         {
-            GloomyAPI.Instance.SetInputValue();
+            //GloomyAPI.Instance.SetInputValue();
         }
     }
 }
