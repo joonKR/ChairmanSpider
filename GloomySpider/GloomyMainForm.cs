@@ -153,7 +153,10 @@ namespace GloomySpider
 
             if (type.Equals("종목편입"))
             {
+                OPT10001_주식기본정보 data = new OPT10001_주식기본정보();
+                data.종목코드 = e.sTrCode;
 
+                //this.ConditionResultStockList.Add()
             }
             else
             {
