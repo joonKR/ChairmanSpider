@@ -325,6 +325,66 @@ namespace GloomySpider
                 this.tb매수주문수량.Text = Int32.Parse(this.axKHOpenAPI.GetCommData(e.sTrCode, e.sRQName, 0, "보증금40주문가능수량").Trim()).ToString();
 
                 Logger(Log.조회, "신용보증금율별주문가능수량조회요청 성공");
+            }else if (e.sRQName.Equals("실시간미체결요청"))
+            {
+                //MessageBox.Show("들어오나?");
+                int count = axKHOpenAPI.GetRepeatCnt(e.sTrCode, e.sRQName);
+
+                if(count < 1)
+                {
+                    MessageBox.Show("미체결주문이 없습니다.");
+                    return;
+                }
+
+                List<OPT10075_실시간미체결> OPT10075_dataList = new List<OPT10075_실시간미체결>();
+                for (int i = 0; i < count; i++)
+                {
+                    OPT10075_실시간미체결 multiData = new OPT10075_실시간미체결();
+
+                    multiData.계좌번호 = axKHOpenAPI.GetCommData(e.sTrCode, e.sRQName, i, "계좌번호").Trim();
+                    multiData.주문번호 = axKHOpenAPI.GetCommData(e.sTrCode, e.sRQName, i, "주문번호").Trim();
+                    multiData.관리사번 = axKHOpenAPI.GetCommData(e.sTrCode, e.sRQName, i, "관리사번").Trim();
+                    multiData.종목코드 = axKHOpenAPI.GetCommData(e.sTrCode, e.sRQName, i, "종목코드").Trim();
+                    multiData.업무구분 = axKHOpenAPI.GetCommData(e.sTrCode, e.sRQName, i, "업무구분").Trim();
+                    multiData.주문상태 = axKHOpenAPI.GetCommData(e.sTrCode, e.sRQName, i, "주문상태").Trim();
+                    multiData.종목명 = axKHOpenAPI.GetCommData(e.sTrCode, e.sRQName, i, "종목명").Trim();
+                    multiData.주문수량 = axKHOpenAPI.GetCommData(e.sTrCode, e.sRQName, i, "주문수량").Trim();
+                    multiData.주문가격 = axKHOpenAPI.GetCommData(e.sTrCode, e.sRQName, i, "주문가격").Trim();
+                    multiData.미체결수량 = axKHOpenAPI.GetCommData(e.sTrCode, e.sRQName, i, "미체결수량").Trim();
+                    multiData.체결누계금액 = axKHOpenAPI.GetCommData(e.sTrCode, e.sRQName, i, "체결누계금액").Trim();
+                    multiData.원주문번호 = axKHOpenAPI.GetCommData(e.sTrCode, e.sRQName, i, "원주문번호").Trim();
+                    multiData.주문구분 = axKHOpenAPI.GetCommData(e.sTrCode, e.sRQName, i, "주문구분").Trim();
+                    multiData.매매구분 = axKHOpenAPI.GetCommData(e.sTrCode, e.sRQName, i, "매매구분").Trim();
+                    multiData.시간 = axKHOpenAPI.GetCommData(e.sTrCode, e.sRQName, i, "시간").Trim();
+                    multiData.체결번호 = axKHOpenAPI.GetCommData(e.sTrCode, e.sRQName, i, "체결번호").Trim();
+                    multiData.체결가 = axKHOpenAPI.GetCommData(e.sTrCode, e.sRQName, i, "체결가").Trim();
+                    multiData.체결량 = axKHOpenAPI.GetCommData(e.sTrCode, e.sRQName, i, "체결량").Trim();
+                    multiData.현재가 = axKHOpenAPI.GetCommData(e.sTrCode, e.sRQName, i, "현재가").Trim();
+                    multiData.매도호가 = axKHOpenAPI.GetCommData(e.sTrCode, e.sRQName, i, "매도호가").Trim();
+                    multiData.매수호가 = axKHOpenAPI.GetCommData(e.sTrCode, e.sRQName, i, "매수호가").Trim();
+                    multiData.단위체결가 = axKHOpenAPI.GetCommData(e.sTrCode, e.sRQName, i, "단위체결가").Trim();
+                    multiData.단위체결량 = axKHOpenAPI.GetCommData(e.sTrCode, e.sRQName, i, "단위체결량").Trim();
+                    multiData.당일매매수수료 = axKHOpenAPI.GetCommData(e.sTrCode, e.sRQName, i, "당일매매수수료").Trim();
+                    multiData.당일매매세금 = axKHOpenAPI.GetCommData(e.sTrCode, e.sRQName, i, "당일매매세금").Trim();
+                    multiData.개인투자자 = axKHOpenAPI.GetCommData(e.sTrCode, e.sRQName, i, "개인투자자").Trim();
+
+                    OPT10075_dataList.Add(multiData);
+                }
+
+                NotConclude nc = new NotConclude(this, OPT10075_dataList);
+                nc.Show();
+
+                //this.dataGridViewAccountStock.DataSource = OPW00004_dataList;
+
+                //foreach (DataGridViewColumn col in dataGridViewAccountStock.Columns)
+                //{
+                //    col.SortMode = DataGridViewColumnSortMode.NotSortable;
+                //}
+                //if (dataGridViewAccountStock.SelectedRows.Count > 0)
+                //    dataGridViewAccountStock.SelectedRows[0].Selected = false;
+
+
+                Logger(Log.조회, "실시간미체결요청 성공");
             }
         }
 
@@ -606,8 +666,7 @@ namespace GloomySpider
 
         private void btn정정취소미체결_Click(object sender, EventArgs e)
         {
-            NotConclude nc = new NotConclude();
-            nc.Show();
+            Get_OPT10075_실시간미체결요청();
         }
         #endregion
 
@@ -636,6 +695,23 @@ namespace GloomySpider
             this.axKHOpenAPI.SetInputValue("비밀번호입력매체구분", "00");
 
             int result = this.axKHOpenAPI.CommRqData("계좌평가현황요청", "OPW00004", 0, "6001");
+        }
+
+        private void Get_OPT10075_실시간미체결요청()
+        {
+            OPT10075_실시간미체결요청 data = new OPT10075_실시간미체결요청();
+
+            //data.계좌번호 = ((GloomyMainForm)this.Owner).getAccountNum();
+            //data.계좌번호 = "8095183511";
+            data.계좌번호 = cbAccount.Text;
+            data.체결구분 = "1";
+            data.매매구분 = "0";
+
+            GloomyAPI.Instance.SetInputValue("계좌번호", data.계좌번호);
+            GloomyAPI.Instance.SetInputValue("체결구분", data.체결구분);
+            GloomyAPI.Instance.SetInputValue("매매구분", data.매매구분);
+
+            int result1 = GloomyAPI.Instance.CommRqData(data.RQName, data.RQCode, 0, GetScreenNum());
         }
 
         private void sendOrderGS(int orderType, string stockCode, int orderQty, int orderPrice, string orderGb, bool creditYn, string orgOrderNo = "")
@@ -706,7 +782,7 @@ namespace GloomySpider
             }
         }
 
-        private string GetScreenNum()
+        public string GetScreenNum()
         {
             if (_scrNum < 9000)
                 this._scrNum++;
@@ -798,6 +874,11 @@ namespace GloomySpider
             }
 
             _scrNum = 5000;
+        }
+
+        public string getAccountNum()
+        {
+            return this.cbAccount.Text;
         }
     }
 }
