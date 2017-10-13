@@ -12,19 +12,28 @@ namespace GloomySpider
 {
     public partial class NotConclude : Form
     {
+        GloomyMainForm pForm;
+        private List<OPT10075_실시간미체결> oPT10075_dataList;
+
         public NotConclude()
         {
             InitializeComponent();
         }
 
-        private void NotConclude_Load(object sender, EventArgs e)
+        public NotConclude(GloomyMainForm parentForm)
         {
-            this.requestTR();
+            this.pForm = parentForm;
+            InitializeComponent();
         }
 
-        private void requestTR()
+        public NotConclude(GloomyMainForm parentForm, List<OPT10075_실시간미체결> oPT10075_dataList) : this(parentForm)
         {
-            //GloomyAPI.Instance.SetInputValue();
+            this.oPT10075_dataList = oPT10075_dataList;
+        }
+
+        private void NotConclude_Load(object sender, EventArgs e)
+        {
+            //Get_OPT10075_실시간미체결요청();
         }
     }
 }

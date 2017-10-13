@@ -387,6 +387,9 @@ namespace GloomySpider
 
     public class OPT10075_실시간미체결요청
     {
+        private string _RQName = "실시간미체결요청";
+        private string _RQCode = "OPT10075";
+
         private string _계좌번호;
         private string _체결구분;
         private string _매매구분;
@@ -394,6 +397,8 @@ namespace GloomySpider
         public string 계좌번호 { get => _계좌번호; set => _계좌번호 = value; }
         public string 체결구분 { get => _체결구분; set => _체결구분 = value; }
         public string 매매구분 { get => _매매구분; set => _매매구분 = value; }
+        public string RQName { get => _RQName; set => _RQName = value; }
+        public string RQCode { get => _RQCode; set => _RQCode = value; }
     }
 
     public class OPT10075_실시간미체결

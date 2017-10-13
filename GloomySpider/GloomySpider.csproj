@@ -92,6 +92,7 @@
     <None Include="datasource\OPT10001_주식기본정보.datasource" />
     <None Include="datasource\OPW00018_계좌평가결과1.datasource" />
     <None Include="datasource\OPW00018_계좌평가잔고개별합산1.datasource" />
+    <None Include="OPT10075_실시간미체결.datasource" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
